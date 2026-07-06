@@ -1,0 +1,11 @@
+C:\dev\segfy\Segfy.Domain\bin\Debug\net10.0\Segfy.Domain.deps.json
+C:\dev\segfy\Segfy.Domain\bin\Debug\net10.0\Segfy.Domain.dll
+C:\dev\segfy\Segfy.Domain\bin\Debug\net10.0\Segfy.Domain.pdb
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\Segfy.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\Segfy.Domain.AssemblyInfoInputs.cache
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\Segfy.Domain.AssemblyInfo.cs
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\Segfy.Domain.csproj.CoreCompileInputs.cache
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\Segfy.Domain.dll
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\refint\Segfy.Domain.dll
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\Segfy.Domain.pdb
+C:\dev\segfy\Segfy.Domain\obj\Debug\net10.0\ref\Segfy.Domain.dll

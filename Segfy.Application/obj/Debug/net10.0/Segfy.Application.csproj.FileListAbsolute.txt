@@ -1,0 +1,15 @@
+C:\dev\segfy\Segfy.Application\bin\Debug\net10.0\Segfy.Application.deps.json
+C:\dev\segfy\Segfy.Application\bin\Debug\net10.0\Segfy.Application.dll
+C:\dev\segfy\Segfy.Application\bin\Debug\net10.0\Segfy.Application.pdb
+C:\dev\segfy\Segfy.Application\bin\Debug\net10.0\Segfy.Domain.dll
+C:\dev\segfy\Segfy.Application\bin\Debug\net10.0\Segfy.Domain.pdb
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.csproj.AssemblyReference.cache
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.AssemblyInfoInputs.cache
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.AssemblyInfo.cs
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.csproj.CoreCompileInputs.cache
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Ap.A2FCF154.Up2Date
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.dll
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\refint\Segfy.Application.dll
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\Segfy.Application.pdb
+C:\dev\segfy\Segfy.Application\obj\Debug\net10.0\ref\Segfy.Application.dll

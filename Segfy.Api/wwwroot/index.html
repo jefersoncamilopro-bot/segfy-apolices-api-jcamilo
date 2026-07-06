@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segfy HANDS ON, BACK-END JR</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #001b3f;
+    }
+
+    header {
+      background: #fff;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 36px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .logo {
+      background: #ff5c00;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 22px;
+    }
+
+    .brand strong {
+      color: #ff5c00;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #001b3f;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff5c00;
+    }
+
+    main {
+      padding: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #ff5c00;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #001b3f;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-blue {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .btn-yellow {
+      background: #facc15;
+      color: #111827;
+    }
+
+    .btn-red {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .toolbar-left {
+      flex: 1;
+    }
+
+    .toolbar-left input {
+      max-width: 360px;
+    }
+
+    .toolbar-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f9fafb;
+      font-weight: bold;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .status-ativa {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-cancelada {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .status-expirada {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .row-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 24px;
+      color: #64748b;
+    }
+
+    footer {
+      padding: 20px 32px;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 1100px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .toolbar-right {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">🛡️</div>
+    <div><strong>Segfy</strong> HANDS ON, BACK-END JR</div>
+  </div>
+
+  <nav>
+    <a href="/">Início</a>
+    <a href="/swagger" target="_blank">Swagger</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>📄 Nova / Editar Apólice</h2>
+
+    <input type="hidden" id="id" />
+
+    <div class="form-grid">
+      <div>
+        <label>CPF / CNPJ</label>
+        <input id="cpfCnpj" placeholder="Ex: 52998224725" />
+      </div>
+
+      <div>
+        <label>Placa</label>
+        <input id="placa" placeholder="Ex: ABC1234" />
+      </div>
+
+      <div>
+        <label>Valor do Prêmio</label>
+        <input id="valorPremio" type="number" step="0.01" placeholder="Ex: 199.90" />
+      </div>
+
+      <div>
+        <label>Data Início</label>
+        <input id="dataInicio" type="date" />
+      </div>
+
+      <div>
+        <label>Data Fim</label>
+        <input id="dataFim" type="date" />
+      </div>
+
+      <div>
+        <label>Status</label>
+        <select id="status">
+          <option value="1">Ativa</option>
+          <option value="2">Cancelada</option>
+          <option value="3">Expirada</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="salvar()">Salvar</button>
+      <button class="btn-secondary" onclick="cancelarEdicao()">Cancelar</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>📋 Apólices Cadastradas</h2>
+
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <input id="busca" placeholder="Buscar por CPF, placa ou número..." oninput="renderizarTabela()" />
+      </div>
+
+      <div class="toolbar-right">
+        <button class="btn-blue" onclick="carregarVencendo()">Vencendo 30 dias</button>
+        <button class="btn-primary" onclick="carregarApolices()">Listar Todos</button>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>CPF/CNPJ</th>
+          <th>Placa</th>
+          <th>Prêmio</th>
+          <th>Data Início</th>
+          <th>Data Fim</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela"></tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Segfy</span>
+  <span>Desenvolvido com ASP.NET Core</span>
+</footer>
+
+<script>
+  const API = "/api/apolices";
+  let apolices = [];
+
+  function formatarData(data) {
+    if (!data) return "";
+    return new Date(data).toLocaleDateString("pt-BR");
+  }
+
+  function formatarMoeda(valor) {
+    return Number(valor).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+  }
+
+  function statusTexto(status) {
+    if (status === 1) return "Ativa";
+    if (status === 2) return "Cancelada";
+    if (status === 3) return "Expirada";
+    return "Desconhecido";
+  }
+
+  function statusClasse(status) {
+    if (status === 1) return "status-ativa";
+    if (status === 2) return "status-cancelada";
+    if (status === 3) return "status-expirada";
+    return "";
+  }
+
+  async function carregarApolices() {
+    const response = await fetch(API);
+    apolices = await response.json();
+    renderizarTabela();
+  }
+
+  async function carregarVencendo() {
+    const response = await fetch(`${API}/vencendo`);
+    apolices = await response.json();
+    renderizarTabela();
+  }
+
+  function renderizarTabela() {
+    const busca = document.getElementById("busca").value.toLowerCase();
+    const tabela = document.getElementById("tabela");
+
+    const filtradas = apolices.filter(a =>
+      a.numeroApolice?.toLowerCase().includes(busca) ||
+      a.cpfCnpj?.toLowerCase().includes(busca) ||
+      a.placa?.toLowerCase().includes(busca)
+    );
+
+    if (filtradas.length === 0) {
+      tabela.innerHTML = `
+        <tr>
+          <td colspan="8" class="empty">Nenhuma apólice encontrada.</td>
+        </tr>
+      `;
+      return;
+    }
+
+    tabela.innerHTML = filtradas.map(a => `
+      <tr>
+        <td>${a.numeroApolice}</td>
+        <td>${a.cpfCnpj}</td>
+        <td>${a.placa || "-"}</td>
+        <td>${formatarMoeda(a.valorPremio)}</td>
+        <td>${formatarData(a.dataInicio)}</td>
+        <td>${formatarData(a.dataFim)}</td>
+        <td>
+          <span class="badge ${statusClasse(a.status)}">
+            ${statusTexto(a.status)}
+          </span>
+        </td>
+        <td>
+          <div class="row-actions">
+            <button class="btn-blue" onclick="visualizar('${a.id}')">Ver</button>
+            <button class="btn-yellow" onclick="editar('${a.id}')">Editar</button>
+            <button class="btn-red" onclick="excluir('${a.id}')">Excluir</button>
+          </div>
+        </td>
+      </tr>
+    `).join("");
+  }
+
+  async function salvar() {
+    const id = document.getElementById("id").value;
+
+    const body = {
+      cpfCnpj: document.getElementById("cpfCnpj").value,
+      placa: document.getElementById("placa").value,
+      valorPremio: Number(document.getElementById("valorPremio").value),
+      dataInicio: document.getElementById("dataInicio").value,
+      dataFim: document.getElementById("dataFim").value,
+      status: Number(document.getElementById("status").value)
+    };
+
+    const url = id ? `${API}/${id}` : API;
+    const method = id ? "PUT" : "POST";
+
+    const response = await fetch(url, {
+      method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+
+    if (response.ok) {
+      alert(id ? "Apólice atualizada com sucesso!" : "Apólice cadastrada com sucesso!");
+      cancelarEdicao();
+      carregarApolices();
+    } else {
+      alert("Erro ao salvar apólice.");
+    }
+  }
+
+  async function visualizar(id) {
+    const response = await fetch(`${API}/${id}`);
+    const a = await response.json();
+
+    alert(
+      `Número: ${a.numeroApolice}\n` +
+      `CPF/CNPJ: ${a.cpfCnpj}\n` +
+      `Placa: ${a.placa}\n` +
+      `Prêmio: ${formatarMoeda(a.valorPremio)}\n` +
+      `Início: ${formatarData(a.dataInicio)}\n` +
+      `Fim: ${formatarData(a.dataFim)}\n` +
+      `Status: ${statusTexto(a.status)}`
+    );
+  }
+
+  async function editar(id) {
+    const response = await fetch(`${API}/${id}`);
+    const a = await response.json();
+
+    document.getElementById("id").value = a.id;
+    document.getElementById("cpfCnpj").value = a.cpfCnpj;
+    document.getElementById("placa").value = a.placa;
+    document.getElementById("valorPremio").value = a.valorPremio;
+    document.getElementById("dataInicio").value = a.dataInicio.substring(0, 10);
+    document.getElementById("dataFim").value = a.dataFim.substring(0, 10);
+    document.getElementById("status").value = a.status;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  async function excluir(id) {
+    if (!confirm("Deseja excluir esta apólice?")) return;
+
+    const response = await fetch(`${API}/${id}`, {
+      method: "DELETE"
+    });
+
+    if (response.ok) {
+      alert("Apólice excluída com sucesso!");
+      carregarApolices();
+    } else {
+      alert("Erro ao excluir apólice.");
+    }
+  }
+
+  function cancelarEdicao() {
+    document.getElementById("id").value = "";
+    document.getElementById("cpfCnpj").value = "";
+    document.getElementById("placa").value = "";
+    document.getElementById("valorPremio").value = "";
+    document.getElementById("dataInicio").value = "";
+    document.getElementById("dataFim").value = "";
+    document.getElementById("status").value = "1";
+  }
+
+  carregarApolices();
+</script>
+
+</body>
+</html>

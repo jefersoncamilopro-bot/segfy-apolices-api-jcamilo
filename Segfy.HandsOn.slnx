@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Segfy.Api/Segfy.Api.csproj" />
+  <Project Path="Segfy.Application/Segfy.Application.csproj" />
+  <Project Path="Segfy.Domain/Segfy.Domain.csproj" />
+  <Project Path="Segfy.Infrastructure/Segfy.Infrastructure.csproj" />
+  <Project Path="Segfy.Tests/Segfy.Tests.csproj" />
+</Solution>
