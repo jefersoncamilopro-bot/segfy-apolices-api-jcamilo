@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Segfy.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+924e6d33afcf13911c51d066c87c5d213f8d9768")]
 [assembly: System.Reflection.AssemblyProductAttribute("Segfy.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Segfy.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
